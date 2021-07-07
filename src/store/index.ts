@@ -114,6 +114,10 @@ export const store = createStore<State>({
       return getters.uniqueLetters.every((letter: string) => {
         return state.guessedLetters.includes(letter)
       })
+    },
+
+    gameIsOver: (_state, getters) => {
+      return getters.gameIsLost || getters.gameIsWon
     }
   }
 })

@@ -8,14 +8,9 @@
         <Letter :letter="letter" />
       </li>
     </ul>
-    <div v-if="gameIsWon">
-      {{ t('game.you_win') }}
-      <Button @click="resetGame">
-        {{ t('game.new_game') }}
-      </Button>
-    </div>
-    <div v-else-if="gameIsLost">
-      {{ t('game.you_lose') }}
+
+    <div v-if="gameIsOver" class="p-8 flex flex-col items-center">
+      <span class="text-xl font-semibold mb-4">{{ gameIsWon ? t('game.you_win') : t('game.you_lose') }}</span>
       <Button @click="resetGame">
         {{ t('game.new_game') }}
       </Button>
@@ -44,4 +39,5 @@ const resetGame = () => {
 const letters = computed(() => store.getters.letters as string[])
 const gameIsWon = computed(() => store.getters.gameIsWon)
 const gameIsLost = computed(() => store.getters.gameIsLost)
+const gameIsOver = computed(() => store.getters.gameIsOver)
 </script>
