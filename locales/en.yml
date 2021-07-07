@@ -4,10 +4,6 @@ button:
   go: GO
   home: Home
   toggle_dark: Toggle dark mode
-  toggle_langs: Change languages
 intro:
-  desc: Opinionated Vite Starter Template
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  whats-your-name: What's your name?
+  desc: A variation of the popular game word guessing game played in your browser
 not-found: Not found
