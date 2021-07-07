@@ -26,12 +26,6 @@ export const store = createStore<State>({
   actions: {
     createGame({ commit }, game) {
       commit('setGame', game)
-    },
-    setGameFormat({ commit }, gameFormat) {
-      commit('setGameFormat', gameFormat)
-    },
-    setWord({ commit }, word) {
-      commit('setWord', word)
     }
   },
   mutations: {
@@ -42,12 +36,6 @@ export const store = createStore<State>({
       state.word = word
       state.value = ''
       state.guessedLetters = []
-    },
-    setGameFormat(state, gameFormat) {
-      state.gameFormat = gameFormat
-    },
-    setWord(state, word) {
-      state.word = word
     }
   },
   getters: {
