@@ -5,7 +5,7 @@ import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
   darkMode: 'class',
-  plugins: [forms(), typography()],
+  plugins: [forms, typography()],
   attributify: true,
   theme: {
     extend: {

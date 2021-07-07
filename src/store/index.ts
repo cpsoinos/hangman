@@ -1,6 +1,9 @@
+import Cookies from 'js-cookie'
 import { InjectionKey } from 'vue'
 import { createStore, Store, useStore as baseUseStore } from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 import { GameFormat } from '~/types'
+
 export interface State {
   gameFormat: GameFormat
   guessedLetters: string[]
@@ -10,19 +13,29 @@ export interface State {
   word: string
 }
 
+const baseState: State = {
+  id: '',
+  gameFormat: GameFormat.SingleWord,
+  word: '',
+  value: '',
+  guessedLetters: [],
+  guessesRemaining: 6
+}
+
 // define injection key
 // eslint-disable-next-line symbol-description
 export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
-  state: ({
-    id: '',
-    gameFormat: GameFormat.SingleWord,
-    word: '',
-    value: '',
-    guessedLetters: [],
-    guessesRemaining: 6
-  }),
+  plugins: [createPersistedState({
+    storage: {
+      getItem: key => Cookies.get(key),
+      setItem: (key, value) => Cookies.set(key, value, { expires: 3, secure: true }),
+      removeItem: key => Cookies.remove(key)
+    }
+  })],
+
+  state: (baseState),
 
   actions: {
     createGame: ({ commit }, game) => {
@@ -30,9 +43,13 @@ export const store = createStore<State>({
     },
 
     guessLetter: ({ commit, getters }, letter: string) => {
-      commit('addGuessedLetter', letter)
+      commit('addGuessedLetter', letter.toLocaleUpperCase())
       if (!getters.letterIsInWord(letter))
         commit('decrementGuessesRemaining')
+    },
+
+    resetGame: ({ commit }) => {
+      commit('resetState')
     }
   },
 
@@ -52,6 +69,15 @@ export const store = createStore<State>({
 
     addGuessedLetter: (state, letter) => {
       state.guessedLetters.push(letter)
+    },
+
+    resetState: (state) => {
+      state.id = baseState.id
+      state.gameFormat = baseState.gameFormat
+      state.word = baseState.word
+      state.value = baseState.value
+      state.guessedLetters = baseState.guessedLetters
+      state.guessesRemaining = baseState.guessesRemaining
     }
   },
 
