@@ -1,3 +1,6 @@
+navigation:
+  rules: Rules
+  about: About
 button:
   about: About
   back: Back

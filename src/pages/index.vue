@@ -93,7 +93,7 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const navigation = [
-  { name: 'Features', href: '#' },
-  { name: 'About', href: '/about' },
+  { name: t('navigation.rules'), href: '/rules' },
+  { name: t('navigation.about'), href: '/about' },
 ]
 </script>
