@@ -7,11 +7,11 @@
         </RadioGroupLabel>
         <div class="space-y-2">
           <RadioGroupOption
-            v-for="plan in plans"
-            :key="plan.name"
+            v-for="gameType in gameTypes"
+            :key="gameType.title"
             v-slot="{ active, checked }"
             as="template"
-            :value="plan"
+            :value="gameType"
           >
             <div
               :class="[
@@ -24,16 +24,14 @@
                 <div class="flex items-center">
                   <div class="text-sm">
                     <RadioGroupLabel as="p" :class="checked ? 'text-white' : 'text-gray-900'" class="font-medium">
-                      {{ plan.name }}
+                      {{ gameType.title }}
                     </RadioGroupLabel>
                     <RadioGroupDescription
                       as="span"
                       :class="checked ? 'text-indigo-100' : 'text-gray-500'"
                       class="inline"
                     >
-                      <span> {{ plan.ram }}/{{ plan.cpus }}</span>
-                      <span aria-hidden="true"> &middot; </span>
-                      <span>{{ plan.disk }}</span>
+                      <span>{{ gameType.description }}</span>
                     </RadioGroupDescription>
                   </div>
                 </div>
@@ -61,32 +59,24 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 useHead({
   title: 'New Game',
   meta: [{ name: 'description', content: 'Create a new game of Hangman' }]
 })
 
-const plans = [
+const gameTypes = [
   {
-    name: 'Startup',
-    ram: '12GB',
-    cpus: '6 CPUs',
-    disk: '160 GB SSD disk'
+    title: t('new_game.single_word.title'),
+    description: t('new_game.single_word.description')
   },
   {
-    name: 'Business',
-    ram: '16GB',
-    cpus: '8 CPUs',
-    disk: '512 GB SSD disk'
-  },
-  {
-    name: 'Enterprise',
-    ram: '32GB',
-    cpus: '12 CPUs',
-    disk: '1024 GB SSD disk'
+    title: t('new_game.phrase.title'),
+    description: t('new_game.phrase.description')
   }
 ]
 
-const selected = ref(plans[0])
+const selected = ref(gameTypes[0])
 </script>
