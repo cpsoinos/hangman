@@ -1,9 +1,12 @@
 <template>
-  <ul class="list-none inline-flex space-x-2">
-    <li v-for="(letter, i) in letters" :key="i">
-      <Letter :letter="letter" />
-    </li>
-  </ul>
+  <div>
+    <ul class="list-none inline-flex space-x-2">
+      <li v-for="(letter, i) in letters" :key="i">
+        <Letter :letter="letter" />
+      </li>
+    </ul>
+    <Guess />
+  </div>
 </template>
 
 <script setup lang="ts">
