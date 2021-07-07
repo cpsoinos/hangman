@@ -10,6 +10,14 @@
     "comma-dangle": [
       "error",
       "never"
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "always",
+        "asyncArrow": "always"
+      }
     ]
   }
 }
