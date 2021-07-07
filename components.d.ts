@@ -24,7 +24,6 @@ declare module 'vue' {
     RadioGroupDescription: typeof import('@headlessui/vue')['RadioGroupDescription']
     RadioGroupLabel: typeof import('@headlessui/vue')['RadioGroupLabel']
     RadioGroupOption: typeof import('@headlessui/vue')['RadioGroupOption']
-    README: typeof import('./src/components/README.md')['default']
     Rules: typeof import('./src/components/Rules.vue')['default']
   }
 }
