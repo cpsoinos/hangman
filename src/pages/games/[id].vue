@@ -9,16 +9,16 @@
       </li>
     </ul>
     <div v-if="gameIsWon">
-      YOU WIN
+      {{ t('game.you_win') }}
       <Button @click="resetGame">
-        NEW GAME
+        {{ t('game.new_game') }}
       </Button>
     </div>
     <div v-else-if="gameIsLost">
-      YOU LOSE
-      <router-link to="/games/new">
-        NEW GAME
-      </router-link>
+      {{ t('game.you_lose') }}
+      <Button @click="resetGame">
+        {{ t('game.new_game') }}
+      </Button>
     </div>
     <Guess v-else />
 

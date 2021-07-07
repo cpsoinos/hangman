@@ -52,3 +52,6 @@ game:
   guesses_remaining: guesses remaining
   guessed_letters:
     title: You've guessed
+  you_win: YOU WIN!
+  you_lose: YOU LOSE!
+  new_game: New game
