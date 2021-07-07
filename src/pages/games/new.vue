@@ -64,8 +64,14 @@
 import { useHead } from '@vueuse/head'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+import { v4 as uuidv4 } from 'uuid'
+import { useWord } from '~/logic'
+import { useStore } from '~/store'
 
 const { t } = useI18n()
+const router = useRouter()
+const store = useStore()
 
 useHead({
   title: 'New Game',
@@ -75,17 +81,22 @@ useHead({
 const gameTypes = [
   {
     title: t('new_game.single_word.title'),
-    description: t('new_game.single_word.description')
+    description: t('new_game.single_word.description'),
+    value: 'single_word'
   },
   {
     title: t('new_game.phrase.title'),
-    description: t('new_game.phrase.description')
+    description: t('new_game.phrase.description'),
+    value: 'phrase'
   }
 ]
 
 const selected = ref(gameTypes[0])
 
 const createGame = () => {
-  console.log('creating a game')
+  const word = useWord()
+  const id = uuidv4()
+  store.dispatch('createGame', { gameFormat: selected.value.value, id, word })
+  router.push(id)
 }
 </script>
