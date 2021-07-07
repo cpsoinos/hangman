@@ -3,7 +3,7 @@
     <div class="w-full max-w-md mx-auto">
       <RadioGroup v-model="selected">
         <RadioGroupLabel class="sr-only">
-          Server size
+          {{ t('new_game.game_type') }}
         </RadioGroupLabel>
         <div class="space-y-2">
           <RadioGroupOption
@@ -16,7 +16,7 @@
             <div
               :class="[
                 active ? 'ring-2 ring-offset-2 ring-offset-indigo-300 ring-white ring-opacity-60' : '',
-                checked ? 'bg-indigo-600 bg-opacity-75 text-white ' : 'bg-white '
+                checked ? 'bg-indigo-600 text-white ' : 'bg-white '
               ]"
               class="relative flex px-5 py-4 rounded-lg shadow-md cursor-pointer focus:outline-none"
             >
@@ -52,6 +52,10 @@
           </RadioGroupOption>
         </div>
       </RadioGroup>
+
+      <Button class="mt-8" @click="createGame">
+        {{ t('new_game.create_game') }}
+      </Button>
     </div>
   </div>
 </template>
@@ -60,6 +64,7 @@
 import { useHead } from '@vueuse/head'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+
 const { t } = useI18n()
 
 useHead({
@@ -79,4 +84,8 @@ const gameTypes = [
 ]
 
 const selected = ref(gameTypes[0])
+
+const createGame = () => {
+  console.log('creating a game')
+}
 </script>
