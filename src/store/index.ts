@@ -64,6 +64,10 @@ export const store = createStore<State>({
       return state.word.split('')
     },
 
+    uniqueLetters: (_state, getters) => {
+      return [...new Set(getters.letters)]
+    },
+
     words: (state) => {
       return state.word.split(' ')
     },
@@ -74,6 +78,16 @@ export const store = createStore<State>({
 
     letterIsInWord: (_state, getters) => (letter: string) => {
       return getters.letters.includes(letter)
+    },
+
+    gameIsLost: (state) => {
+      return state.guessesRemaining <= 0
+    },
+
+    gameIsWon: (state, getters) => {
+      return getters.uniqueLetters.every((letter: string) => {
+        return state.guessedLetters.includes(letter)
+      })
     }
   }
 })

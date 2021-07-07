@@ -8,7 +8,15 @@
         <Letter :letter="letter" />
       </li>
     </ul>
-    <Guess />
+    <div v-if="gameIsWon">
+      YOU WIN
+    </div>
+    <div v-else-if="gameIsLost">
+      YOU LOSE
+    </div>
+    <Guess v-else />
+
+    <GuessedLetters />
   </div>
 </template>
 
@@ -21,4 +29,6 @@ const { t } = useI18n()
 const store = useStore()
 
 const letters = computed(() => store.getters.letters as string[])
+const gameIsWon = computed(() => store.getters.gameIsWon)
+const gameIsLost = computed(() => store.getters.gameIsLost)
 </script>
