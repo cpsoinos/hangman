@@ -1,8 +1,8 @@
 <template>
   <div class="p-6 h-12" :class="{ 'border-b-2': letter !== ' ' }">
-    <template v-if="shouldDisplayLetter">
+    <span v-if="shouldDisplayLetter" :class="{ 'text-red-600': gameIsLost }">
       {{ letter }}
-    </template>
+    </span>
   </div>
 </template>
 
@@ -20,7 +20,9 @@ const props = defineProps({
   }
 })
 
+const gameIsLost = computed(() => store.getters.gameIsLost)
+
 const shouldDisplayLetter = computed(() => {
-  return store.getters.isGuessed(props.letter)
+  return store.getters.isGuessed(props.letter) || gameIsLost.value
 })
 </script>

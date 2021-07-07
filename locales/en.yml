@@ -50,3 +50,5 @@ game:
       already_guessed: Has been guessed already!
       character: Must be a letter!
   guesses_remaining: guesses remaining
+  guessed_letters:
+    title: You've guessed
