@@ -16,6 +16,7 @@ declare module 'vue' {
     HeroiconsOutlineMenu: typeof import('virtual:vite-icons/heroicons-outline/menu')['default']
     HeroiconsOutlineX: typeof import('virtual:vite-icons/heroicons-outline/x')['default']
     IconHeroiconsOutlineMenu: typeof import('virtual:vite-icons/ic/on-heroicons-outline-menu')['default']
+    Letter: typeof import('./src/components/Letter.vue')['default']
     Popover: typeof import('@headlessui/vue')['Popover']
     PopoverButton: typeof import('@headlessui/vue')['PopoverButton']
     PopoverPanel: typeof import('@headlessui/vue')['PopoverPanel']
@@ -23,7 +24,6 @@ declare module 'vue' {
     RadioGroupDescription: typeof import('@headlessui/vue')['RadioGroupDescription']
     RadioGroupLabel: typeof import('@headlessui/vue')['RadioGroupLabel']
     RadioGroupOption: typeof import('@headlessui/vue')['RadioGroupOption']
-    README: typeof import('./src/components/README.md')['default']
     Rules: typeof import('./src/components/Rules.vue')['default']
   }
 }

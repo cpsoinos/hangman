@@ -10,7 +10,7 @@
   "volar.tsPlugin": true,
   "volar.tsPluginStatus": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false,
+    "source.fixAll.eslint": true,
     "source.organizeImports": true
   },
   "files.associations": {

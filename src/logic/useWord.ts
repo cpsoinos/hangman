@@ -1,3 +1,3 @@
 export const useWord = () => {
-  return 'foo'
+  return 'foo bar'
 }
