@@ -31,3 +31,12 @@ rules:
   win:
     title: Winning the game
     description: If the player guesses all the unique letters in the word, then they win the game.
+new_game:
+  game_type: Game type
+  single_word:
+    title: Single word
+    description: Guess a single word
+  phrase:
+    title: Phrase
+    description: Guess a common phrase
+  create_game: Create game
