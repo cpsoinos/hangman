@@ -1,11 +1,7 @@
 {
   "extends": [
     "@antfu/eslint-config",
-    "@vue/prettier",
-    "@vue/prettier/@typescript-eslint",
-    "prettier/@typescript-eslint",
-    "plugin:typescript-sort-keys/recommended",
-    "plugin:prettier/recommended"
+    "plugin:typescript-sort-keys/recommended"
   ],
   "plugins": [
     "typescript-sort-keys"
