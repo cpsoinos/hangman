@@ -9,8 +9,11 @@
   "volar.tsPluginStatus": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
+    "source.organizeImports": true
   },
   "files.associations": {
     "*.css": "postcss",
   },
+  "eslint.packageManager": "pnpm",
+  "editor.formatOnSave": true,
 }

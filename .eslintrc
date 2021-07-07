@@ -1,3 +1,19 @@
 {
-  "extends": "@antfu"
+  "extends": [
+    "@antfu/eslint-config",
+    "@vue/prettier",
+    "@vue/prettier/@typescript-eslint",
+    "prettier/@typescript-eslint",
+    "plugin:typescript-sort-keys/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "typescript-sort-keys"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ]
+  }
 }
