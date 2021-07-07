@@ -45,13 +45,21 @@ export const store = createStore<State>({
   },
 
   getters: {
-    letterCount(state) {
+    letterCount: (state) => {
       return state.word.replaceAll(' ', '').length
+    },
+
+    letters: (state) => {
+      return state.word.split('')
+    },
+
+    words: (state) => {
+      return state.word.split(' ')
+    },
+
+    isGuessed: state => (letter: string) => {
+      return state.guessedLetters.includes(letter)
     }
-
-    // remainingLetterCount(state) {
-
-    // }
   }
 })
 

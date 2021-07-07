@@ -16,6 +16,7 @@ declare module 'vue' {
     HeroiconsOutlineMenu: typeof import('virtual:vite-icons/heroicons-outline/menu')['default']
     HeroiconsOutlineX: typeof import('virtual:vite-icons/heroicons-outline/x')['default']
     IconHeroiconsOutlineMenu: typeof import('virtual:vite-icons/ic/on-heroicons-outline-menu')['default']
+    Letter: typeof import('./src/components/Letter.vue')['default']
     Popover: typeof import('@headlessui/vue')['Popover']
     PopoverButton: typeof import('@headlessui/vue')['PopoverButton']
     PopoverPanel: typeof import('@headlessui/vue')['PopoverPanel']
