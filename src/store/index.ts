@@ -25,15 +25,19 @@ export const store = createStore<State>({
       guessesRemaining: 6
     }
   },
+
   actions: {
     createGame: ({ commit }, game) => {
       commit('setGame', game)
     },
 
-    guessLetter: ({ commit }, letter: string) => {
+    guessLetter: ({ commit, getters }, letter: string) => {
       commit('addGuessedLetter', letter)
+      if (!getters.letterIsInWord(letter))
+        commit('decrementGuessesRemaining')
     }
   },
+
   mutations: {
     setGame: (state, game) => {
       const { id, gameFormat, word } = game
@@ -68,6 +72,10 @@ export const store = createStore<State>({
 
     isGuessed: state => (letter: string) => {
       return state.guessedLetters.includes(letter)
+    },
+
+    letterIsInWord: (_state, getters) => (letter: string) => {
+      return getters.letters.includes(letter)
     }
   }
 })
