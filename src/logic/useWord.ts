@@ -1,6 +1,6 @@
 
 export const useWord = async () => {
-  const url = 'https://random-word-api.herokuapp.com/word?number=10&swear=0'
+  const url = 'https://random-word-api.herokuapp.com/word?number=3&swear=0'
 
   try {
     const resp = await fetch(url)
