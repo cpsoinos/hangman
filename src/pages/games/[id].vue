@@ -38,6 +38,5 @@ const resetGame = () => {
 
 const letters = computed(() => store.getters.letters as string[])
 const gameIsWon = computed(() => store.getters.gameIsWon)
-const gameIsLost = computed(() => store.getters.gameIsLost)
 const gameIsOver = computed(() => store.getters.gameIsOver)
 </script>
