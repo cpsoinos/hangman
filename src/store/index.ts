@@ -43,7 +43,7 @@ export const store = createStore<State>({
     },
 
     guessLetter: ({ commit, getters }, letter: string) => {
-      commit('addGuessedLetter', letter.toLocaleUpperCase())
+      commit('addGuessedLetter', letter.toLowerCase())
       if (!getters.letterIsInWord(letter))
         commit('decrementGuessesRemaining')
     },
