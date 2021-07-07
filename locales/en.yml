@@ -44,3 +44,7 @@ new_game:
 game:
   guess:
     label: Guess
+    errors:
+      required: Please guess a letter!
+      length: Must be a single letter!
+      already_guessed: Has been guessed already!

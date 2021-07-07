@@ -18,6 +18,8 @@
       hover:bg-indigo-700
       md:py-4 md:text-lg md:px-10
     "
+    :class="{ 'opacity-75': disabled }"
+    :disabled="disabled"
     @click="onClick"
   >
     <slot />
@@ -36,6 +38,14 @@ defineProps({
     type: String as () => ButtonHTMLAttributes['type'],
     required: false,
     default: 'button'
+  },
+  /**
+   * Sets `disabled="true"` on the rendered `<button>` element
+   */
+  disabled: {
+    type: Boolean,
+    required: false,
+    default: false
   }
 })
 
