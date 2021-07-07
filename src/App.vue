@@ -10,8 +10,6 @@ import { useHead } from '@vueuse/head'
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
   title: 'Hangman',
-  meta: [
-    { name: 'description', content: 'Let\'s play a game of Hangman.' },
-  ],
+  meta: [{ name: 'description', content: "Let's play a game of Hangman." }]
 })
 </script>

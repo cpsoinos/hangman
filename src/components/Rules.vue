@@ -2,9 +2,9 @@
   <div class="py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="lg:text-center">
-        <h2
-          class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
-        >{{ t('rules.headline') }}</h2>
+        <h2 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          {{ t('rules.headline') }}
+        </h2>
         <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">{{ t('rules.subheader') }}</p>
       </div>
 
@@ -30,23 +30,19 @@ const { t } = useI18n()
 const rules = [
   {
     name: t('rules.guess_letters.title'),
-    description:
-      t('rules.guess_letters.description'),
+    description: t('rules.guess_letters.description')
   },
   {
     name: t('rules.limitation.title'),
-    description:
-      t('rules.limitation.description'),
+    description: t('rules.limitation.description')
   },
   {
     name: t('rules.lose.title'),
-    description:
-      t('rules.lose.description'),
+    description: t('rules.lose.description')
   },
   {
     name: t('rules.win.title'),
-    description:
-      t('rules.win.description'),
-  },
+    description: t('rules.win.description')
+  }
 ]
 </script>
