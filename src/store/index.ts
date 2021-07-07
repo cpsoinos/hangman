@@ -4,6 +4,7 @@ import { GameFormat } from '~/types'
 export interface State {
   gameFormat: GameFormat
   guessedLetters: string[]
+  guessesRemaining: number
   id: string
   value: string
   word: string
@@ -20,7 +21,8 @@ export const store = createStore<State>({
       gameFormat: 'single_word',
       word: '',
       value: '',
-      guessedLetters: []
+      guessedLetters: [],
+      guessesRemaining: 6
     }
   },
   actions: {
@@ -36,10 +38,20 @@ export const store = createStore<State>({
       state.word = word
       state.value = ''
       state.guessedLetters = []
+    },
+    decrementGuessesRemaining(state) {
+      state.guessesRemaining -= 1
     }
   },
-  getters: {
 
+  getters: {
+    letterCount(state) {
+      return state.word.replaceAll(' ', '').length
+    }
+
+    // remainingLetterCount(state) {
+
+    // }
   }
 })
 
