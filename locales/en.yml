@@ -16,3 +16,18 @@ button:
 intro:
   desc: A variation of the popular word guessing game played in your browser
 not-found: Not found
+rules:
+  headline: How to play the game
+  subheader: Rules to live or die by
+  guess_letters:
+    title: Guess the letters
+    description: Hangman is a game in which the player must guess all the unique letters that form a word.
+  limitation:
+    title: Limitations
+    description: The player is limited in the number of incorrect guesses they can make.
+  lose:
+    title: Losing the game
+    description: If they reach that number then they lose the game.
+  win:
+    title: Winning the game
+    description: If the player guesses all the unique letters in the word, then they win the game.

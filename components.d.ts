@@ -19,6 +19,7 @@ declare module 'vue' {
     PopoverButton: typeof import('@headlessui/vue')['PopoverButton']
     PopoverPanel: typeof import('@headlessui/vue')['PopoverPanel']
     README: typeof import('./src/components/README.md')['default']
+    Rules: typeof import('./src/components/Rules.vue')['default']
   }
 }
 
