@@ -15,16 +15,14 @@ export interface State {
 export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
-  state() {
-    return {
-      id: '',
-      gameFormat: 'single_word',
-      word: '',
-      value: '',
-      guessedLetters: [],
-      guessesRemaining: 6
-    }
-  },
+  state: ({
+    id: '',
+    gameFormat: GameFormat.SingleWord,
+    word: '',
+    value: '',
+    guessedLetters: [],
+    guessesRemaining: 6
+  }),
 
   actions: {
     createGame: ({ commit }, game) => {
@@ -80,6 +78,6 @@ export const store = createStore<State>({
   }
 })
 
-export function useStore() {
+export const useStore = () => {
   return baseUseStore(key)
 }
