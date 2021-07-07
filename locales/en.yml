@@ -13,6 +13,7 @@ button:
   workflow: Workflow
   log_in: Log in
   log_out: Log out
+  submit: Submit
 intro:
   desc: A variation of the popular word guessing game played in your browser
 not-found: Not found
@@ -40,3 +41,11 @@ new_game:
     title: Phrase
     description: Guess a common phrase
   create_game: Create game
+game:
+  guess:
+    label: Guess
+    errors:
+      required: Please guess a letter!
+      length: Must be a single letter!
+      already_guessed: Has been guessed already!
+  guesses_remaining: guesses remaining

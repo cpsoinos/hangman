@@ -53,7 +53,7 @@
         </div>
       </RadioGroup>
 
-      <Button class="mt-8" @click="createGame">
+      <Button class="mt-8 w-full" @click="createGame">
         {{ t('new_game.create_game') }}
       </Button>
     </div>

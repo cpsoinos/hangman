@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite-plugin-windicss'
 import colors from 'windicss/colors'
+import forms from 'windicss/plugin/forms'
 import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
   darkMode: 'class',
-  plugins: [typography()],
+  plugins: [forms(), typography()],
   attributify: true,
   theme: {
     extend: {

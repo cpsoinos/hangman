@@ -13,6 +13,7 @@ declare module 'vue' {
     CarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
     CarbonWarning: typeof import('virtual:vite-icons/carbon/warning')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    Guess: typeof import('./src/components/Guess.vue')['default']
     HeroiconsOutlineMenu: typeof import('virtual:vite-icons/heroicons-outline/menu')['default']
     HeroiconsOutlineX: typeof import('virtual:vite-icons/heroicons-outline/x')['default']
     IconHeroiconsOutlineMenu: typeof import('virtual:vite-icons/ic/on-heroicons-outline-menu')['default']
