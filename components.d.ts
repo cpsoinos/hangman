@@ -12,7 +12,14 @@ declare module 'vue' {
     CarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
     CarbonWarning: typeof import('virtual:vite-icons/carbon/warning')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    HeroiconsOutlineMenu: typeof import('virtual:vite-icons/heroicons-outline/menu')['default']
+    HeroiconsOutlineX: typeof import('virtual:vite-icons/heroicons-outline/x')['default']
+    IconHeroiconsOutlineMenu: typeof import('virtual:vite-icons/ic/on-heroicons-outline-menu')['default']
+    Popover: typeof import('@headlessui/vue')['Popover']
+    PopoverButton: typeof import('@headlessui/vue')['PopoverButton']
+    PopoverPanel: typeof import('@headlessui/vue')['PopoverPanel']
     README: typeof import('./src/components/README.md')['default']
+    Rules: typeof import('./src/components/Rules.vue')['default']
   }
 }
 

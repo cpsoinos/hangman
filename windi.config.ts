@@ -4,9 +4,7 @@ import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
   darkMode: 'class',
-  plugins: [
-    typography(),
-  ],
+  plugins: [typography()],
   attributify: true,
   theme: {
     extend: {
@@ -22,8 +20,8 @@ export default defineConfig({
               'textDecoration': 'underline',
               '&:hover': {
                 opacity: 1,
-                color: colors.teal[600],
-              },
+                color: colors.teal[600]
+              }
             },
             b: { color: 'inherit' },
             strong: { color: 'inherit' },
@@ -32,10 +30,10 @@ export default defineConfig({
             h2: { color: 'inherit' },
             h3: { color: 'inherit' },
             h4: { color: 'inherit' },
-            code: { color: 'inherit' },
-          },
-        },
-      },
-    },
-  },
+            code: { color: 'inherit' }
+          }
+        }
+      }
+    }
+  }
 })
