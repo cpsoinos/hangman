@@ -69,6 +69,7 @@ import { useRouter } from 'vue-router'
 import { v4 as uuidv4 } from 'uuid'
 import { useWord } from '~/logic'
 import { useStore } from '~/store'
+import { GameFormat } from '~/types'
 
 const { t } = useI18n()
 const router = useRouter()
@@ -83,20 +84,23 @@ const gameTypes = [
   {
     title: t('new_game.single_word.title'),
     description: t('new_game.single_word.description'),
-    value: 'single_word'
+    value: GameFormat.SingleWord
   },
   {
     title: t('new_game.phrase.title'),
     description: t('new_game.phrase.description'),
-    value: 'phrase'
+    value: GameFormat.Phrase
   }
 ]
 
 const selected = ref(gameTypes[0])
 
-const createGame = () => {
-  const word = useWord()
+const createGame = async () => {
+  const words = await useWord()
   const id = uuidv4()
+
+  const word = selected.value.value === GameFormat.SingleWord ? words[0] : words.join(' ')
+
   store.dispatch('createGame', { gameFormat: selected.value.value, id, word })
   router.push(id)
 }

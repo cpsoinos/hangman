@@ -2,7 +2,10 @@ import { ViteSSGContext } from 'vite-ssg'
 
 export type UserModule = (ctx: ViteSSGContext) => void
 
-export type GameFormat = 'single_word' | 'phrase'
+export enum GameFormat {
+  Phrase = 'phrase',
+  SingleWord = 'single_word'
+}
 
 export interface Game {
   format: GameFormat
