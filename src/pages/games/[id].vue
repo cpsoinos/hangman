@@ -3,7 +3,7 @@
     <div class="p-8">
       {{ store.state.guessesRemaining }} {{ t('game.guesses_remaining') }}
     </div>
-    <ul class="list-none inline-flex space-x-2">
+    <ul class="list-none inline-flex flex-wrap space-x-2">
       <li v-for="(letter, i) in letters" :key="i">
         <Letter :letter="letter" />
       </li>

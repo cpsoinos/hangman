@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6" :class="{ 'border-b-2': letter !== ' ' }">
+  <div class="p-6 h-12" :class="{ 'border-b-2': letter !== ' ' }">
     <template v-if="shouldDisplayLetter">
       {{ letter }}
     </template>
