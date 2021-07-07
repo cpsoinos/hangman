@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'
 import { InjectionKey } from 'vue'
 import { createStore, Store, useStore as baseUseStore } from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
@@ -26,7 +27,13 @@ const baseState: State = {
 export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
-  plugins: [createPersistedState()],
+  plugins: [createPersistedState({
+    storage: {
+      getItem: key => Cookies.get(key),
+      setItem: (key, value) => Cookies.set(key, value, { expires: 3, secure: true }),
+      removeItem: key => Cookies.remove(key)
+    }
+  })],
 
   state: (baseState),
 
