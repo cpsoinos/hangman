@@ -57,7 +57,7 @@
         {{ t('new_game.create_game') }}
       </Button>
     </div>
-    <rules />
+    <Rules />
   </div>
 </template>
 
