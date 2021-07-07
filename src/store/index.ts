@@ -1,6 +1,8 @@
 import { InjectionKey } from 'vue'
 import { createStore, Store, useStore as baseUseStore } from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 import { GameFormat } from '~/types'
+
 export interface State {
   gameFormat: GameFormat
   guessedLetters: string[]
@@ -15,6 +17,8 @@ export interface State {
 export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
+  plugins: [createPersistedState()],
+
   state: ({
     id: '',
     gameFormat: GameFormat.SingleWord,
