@@ -1,5 +1,5 @@
 <template>
-  <nav class="text-xl mt-6">
+  <nav class="text-xl text-center mt-6">
     <router-link class="icon-btn mx-2" to="/" :title="t('button.home')">
       <carbon-campsite />
     </router-link>

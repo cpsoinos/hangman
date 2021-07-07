@@ -18,6 +18,10 @@ declare module 'vue' {
     Popover: typeof import('@headlessui/vue')['Popover']
     PopoverButton: typeof import('@headlessui/vue')['PopoverButton']
     PopoverPanel: typeof import('@headlessui/vue')['PopoverPanel']
+    RadioGroup: typeof import('@headlessui/vue')['RadioGroup']
+    RadioGroupDescription: typeof import('@headlessui/vue')['RadioGroupDescription']
+    RadioGroupLabel: typeof import('@headlessui/vue')['RadioGroupLabel']
+    RadioGroupOption: typeof import('@headlessui/vue')['RadioGroupOption']
     README: typeof import('./src/components/README.md')['default']
     Rules: typeof import('./src/components/Rules.vue')['default']
   }
