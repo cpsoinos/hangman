@@ -48,4 +48,5 @@ game:
       required: Please guess a letter!
       length: Must be a single letter!
       already_guessed: Has been guessed already!
+      character: Must be a letter!
   guesses_remaining: guesses remaining

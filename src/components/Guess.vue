@@ -32,6 +32,7 @@ const store = useStore()
 const validationSchema = {
   guess: (val: string) => {
     if (!val || val.trim().length === 0) return t('game.guess.errors.required')
+    else if (val.match(/[^A-Za-z]/)) return t('game.guess.errors.character')
     else if (val.length > 1) return t('game.guess.errors.length')
     else if (store.getters.isGuessed(val)) return t('game.guess.errors.already_guessed')
     else return true
