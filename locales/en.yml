@@ -4,6 +4,12 @@ button:
   go: GO
   home: Home
   toggle_dark: Toggle dark mode
+  get_started: Get started
+  open_main_menu: Open main menu
+  close_main_menu: Open main menu
+  workflow: Workflow
+  log_in: Log in
+  log_out: Log out
 intro:
-  desc: A variation of the popular game word guessing game played in your browser
+  desc: A variation of the popular word guessing game played in your browser
 not-found: Not found
